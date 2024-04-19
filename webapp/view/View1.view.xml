@@ -32,17 +32,17 @@
                 <Label id="_IDGenLabel1" text="Employee Name" />
                 <Input
                     id="name"
-                    value="{/employee/EmployeeName}"
+                    value="{/employee/0/fName} {/employee/0/lName}"
                 />
 
                 <Label id="_IDGenLabel2" text="Employee Age"></Label>
-                <Input id="_IDGenInput1" value="{/employee/EmployeeAge}" type="Number"></Input>
+                <Input id="_IDGenInput1" value="{/person/EmployeeAge}" type="Number" change="true"></Input>
 
                 <Label id="_IDGenLabel3" text="Contract Started"></Label>
-                <DatePicker id="_IDGenDatePicker1" value="{/employee/ContractStarted}"/>
+                <DatePicker id="_IDGenDatePicker1" value="{/person/ContractStarted}"/>
 
                 <Label id="_IDGenLabel4" text="Email"></Label>
-                <Input id="_IDGenInput2" value="{/employee/Email}" type="Email"/>
+                <Input id="_IDGenInput2" value="{/employee/0/email}" type="Email"/>
 
             </f:content>
         </f:SimpleForm>
