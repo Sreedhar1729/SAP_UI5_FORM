@@ -48,8 +48,8 @@
         </f:SimpleForm>
     </VBox> -->
 
-
-    <Table id="_IDGenTable1" items="{/employee}" alternateRowColors="true">
+<!-- 
+    <Table id="_IDGenTable1" items="{/employee}" alternateRowColors="true" growing="true" growingThreshold="6" growingDirection="Upwards" >
     <columns>
     <Column id="_IDGenColumn1" >
     <header>
@@ -92,5 +92,17 @@
 </ColumnListItem>
 </items>    
     
-    </Table>
+    </Table> -->
+
+<l:VerticalLayout id="idVerticalLayout" binding="{/person}">
+        <Input id="_IDGenInput1" value="{EmployeeName}"></Input>
+        <!--  Expression binding here we check if the employee name is John Do then sets the age AS  34 or else sets to 56 -->
+        <Input id="_IDGenInput2" value="{=${EmployeeName == 'John Do'} ? 34 : 56 }" ></Input>
+<!-- Binding as a property with specific path -->
+        <Input id="_IDGenInput3" value="{ path:'/person/ContractStarted'}"></Input>
+        <Input id="_IDGenInput4" value="{Email}"></Input>
+        <Button id="_IDGenButton1" text="Submit" press="onSubmitData"/>
+    </l:VerticalLayout>
+
+
 </mvc:View>
